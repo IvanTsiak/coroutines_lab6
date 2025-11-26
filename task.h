@@ -26,6 +26,10 @@ struct Task {
     std::coroutine_handle<promise_type> handle;
     
     Task(std::coroutine_handle<promise_type> h) : handle(h) {}
+
+    Task(Task const &) = delete;
+    Task &operator=(Task const &) = delete;
+    
     ~Task() {
         if (handle) handle.destroy();
     }

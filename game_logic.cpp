@@ -5,7 +5,7 @@
 static std::mt19937 rng(std::random_device{}());
 
 void print_board(const board& b) {
-    std::cout << "\n ";
+    std::cout << "\n  ";
     for (int i=0; i<N; ++i) {
         std::cout << i << " ";
     }
@@ -85,7 +85,7 @@ Task player_actor(int id, board& b) {
             break;
         }
 
-        std::uniform_int_distribution<int> dist(0, moves.size() - 1);
+        std::uniform_int_distribution<int> dist(0, static_cast<int>(moves.size()) - 1);
         auto move = moves[dist(rng)];
         b[move.first][move.second] = id;
 

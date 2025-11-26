@@ -26,7 +26,7 @@ int main() {
         print_board(b);
 
         if (check_win(b, pid)) {
-            std::cout << "Player " << pid << " WIN!!!!!!!!!!!!!\n";
+            std::cout << "Player " << pid << " WIN!!!!!!!!!!!!\n";
             game_over = true;
         } else if (is_full(b)) {
             std::cout << "Draw";
